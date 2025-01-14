@@ -160,7 +160,7 @@
                     </div>
                     <div class="input-group">
                         <label>莱茵卫士_紧急(150'/次)：</label>
-                        <input type="checkbox" id="mission3_2" value="0">
+                        <input type="number" id="mission3_2" value="0">
                     </div>
                     <br>
                     <div class="input-group">
@@ -317,8 +317,9 @@
         });
 
         function calculateScore() {
+            let score = parseInt(document.getElementById('score').value) || 0;
             let team1 = document.getElementById('team1').checked ? 1.1:0;
-            let team2 = document.getElementById('team1').checked ? 1.1:0;
+            let team2 = document.getElementById('team2').checked ? 1.1:0;
             
             let sixStar = parseInt(document.getElementById('sixStar').value) || 0;
             let fiveStar = parseInt(document.getElementById('fiveStar').value) || 0;
@@ -344,7 +345,7 @@
             let mission4_2 = parseInt(document.getElementById('mission4_2').value) || 0;
             let mission5_2 = parseInt(document.getElementById('mission5_2').value) || 0;
             let mission6_2 = parseInt(document.getElementById('mission6_2').value) || 0;
-            let mission7_1 = parseInt(document.getElementById('mission7_1)').value) || 0;
+            let mission7_1 = parseInt(document.getElementById('mission7_1').value) || 0;
             let mission7_2 = parseInt(document.getElementById('mission7_2').value) || 0;
             let mission8_1 = parseInt(document.getElementById('mission8_1').value) || 0;
             let mission8_2 = parseInt(document.getElementById('mission8_2').value) || 0;
@@ -376,9 +377,9 @@
             let ending9_2_2 = document.getElementById('ending9_2_2').checked ? 220:0;
             let ending9_2_3 = document.getElementById('ending9_2_3').checked ? 260:0;
             let ending9_2_4 = document.getElementById('ending9_2_4').checked ? 400:0;
+            
 
-            let score = parseInt(document.getElementById('score').value) || 0;
-
+            // Example score calculations, replace with actual logic
             let totalScore = 
                 (score * team1) + 
                 (score * team2) + 
@@ -432,8 +433,8 @@
                 (ending9_2_2) +
                 (ending9_2_3) +
                 (ending9_2_4);
-            document.getElementById('result').innerText = '得分：' + totalScore+'！';
 
+            document.getElementById('result').innerText = '得分：' + totalScore+'！';
         }
     </script>
 </body>
