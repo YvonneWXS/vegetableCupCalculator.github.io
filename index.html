@@ -75,10 +75,10 @@
                 <div class="category">
                     <h2>01 分队</h2>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending1_1"> 高规格分队(结算界面1.1倍)</label>
+                        <label><input type="checkbox" id="team1"> 高规格分队(结算界面1.1倍)</label>
                     </div>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending2_1">重辅(结算界面1.1倍)</label>
+                        <label><input type="checkbox" id="team2">重辅(结算界面1.1倍)</label>
                     </div>
                     
                 </div>
@@ -120,14 +120,14 @@
                     </div>
                     <div class="input-group">
                         <label for="Collection">超200后取钱(5'/块)：</label>
-                        <input type="number" id="Collection_sp" value="0">
+                        <input type="number" id="bank_increase" value="0">
                     </div>
 
                 </div>
                 <div class="category">
                     <h2>05 特殊击杀</h2>
                     <label for="Collection">狗/鸭/熊/鼠 20'/个：</label>
-                    <input type="number" id="Collection" value="0">
+                    <input type="number" id="kill" value="0">
                 </div>
                 <div class="category">
                     <h2>06 道中关卡</h2>
@@ -213,11 +213,11 @@
                 <div class="category">
                     <h2>07 路线加分</h2>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending1_1"> 145结局(+100')</label>
+                        <label><input type="checkbox" id="ending145"> 145结局(+100')</label>
                     </div>
                     <br>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending2_1">245结局(+150')</label>
+                        <label><input type="checkbox" id="ending245">245结局(+150')</label>
                     </div>
                 </div>
                 <div class="category">
@@ -286,16 +286,16 @@
                     </div>
                     <br>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending8_2_1">不容拒绝_普通(200')</label>
+                        <label><input type="checkbox" id="ending9_2_1">不容拒绝_普通(200')</label>
                     </div>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending8_2_2">不容拒绝_混乱(220')</label>
+                        <label><input type="checkbox" id="ending9_2_2">不容拒绝_混乱(220')</label>
                     </div>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending8_2_3">不容拒绝_混乱+滚动(260')</label>
+                        <label><input type="checkbox" id="ending9_2_3">不容拒绝_混乱+滚动(260')</label>
                     </div>
                     <div class="input-group">
-                        <label><input type="checkbox" id="ending8_2_3">不容拒绝_三级蛋(400')</label>
+                        <label><input type="checkbox" id="ending9_2_4">不容拒绝_三级蛋(400')</label>
                     </div>
                 </div>
                 <div class="category">
@@ -311,5 +311,130 @@
         </div>
         <h2 id="result" class="result">最终得分：0！</div>
     </div>
+    <script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', calculateScore);
+        });
+
+        function calculateScore() {
+            let team1 = document.getElementById('team1').checked ? 1.1:0;
+            let team2 = document.getElementById('team1').checked ? 1.1:0;
+            
+            let sixStar = parseInt(document.getElementById('sixStar').value) || 0;
+            let fiveStar = parseInt(document.getElementById('fiveStar').value) || 0;
+            let fourStar = parseInt(document.getElementById('fourStar').value) || 0;
+
+            let collection1 = parseInt(document.getElementById('collection1').value) || 0;
+            let collection2 = parseInt(document.getElementById('collection2').value) || 0;
+            let collection3 = parseInt(document.getElementById('collection3').value) || 0;
+
+            let bank_decrease = parseInt(document.getElementById('bank_decrease').value) || 0;
+            let bank_increase = parseInt(document.getElementById('bank_increase').value) || 0;
+            
+            let kill = parseInt(document.getElementById('kill').value) || 0;
+
+            let mission_sp = parseInt(document.getElementById('mission_sp').value) || 0;
+            let mission1_1 = parseInt(document.getElementById('mission1_1').value) || 0;
+            let mission1_2 = parseInt(document.getElementById('mission1_2').value) || 0;
+            let mission2_1 = parseInt(document.getElementById('mission2_1').value) || 0;
+            let mission2_2 = parseInt(document.getElementById('mission2_2').value) || 0;
+            let mission3_1 = parseInt(document.getElementById('mission3_1').value) || 0;
+            let mission3_2 = parseInt(document.getElementById('mission3_2').value) || 0;
+            let mission4_1 = parseInt(document.getElementById('mission4_1').value) || 0;
+            let mission4_2 = parseInt(document.getElementById('mission4_2').value) || 0;
+            let mission5_2 = parseInt(document.getElementById('mission5_2').value) || 0;
+            let mission6_2 = parseInt(document.getElementById('mission6_2').value) || 0;
+            let mission7_1 = parseInt(document.getElementById('mission7_1)').value) || 0;
+            let mission7_2 = parseInt(document.getElementById('mission7_2').value) || 0;
+            let mission8_1 = parseInt(document.getElementById('mission8_1').value) || 0;
+            let mission8_2 = parseInt(document.getElementById('mission8_2').value) || 0;
+            let mission9_2 = parseInt(document.getElementById('mission9_2').value) || 0;
+            let mission10_2 = parseInt(document.getElementById('mission10_2').value) || 0;
+
+            let ending145 = document.getElementById('ending145').checked ? 100:0;
+            let ending245 = document.getElementById('ending245').checked ? 150:0;
+
+            let ending1_1 = document.getElementById('ending1_1').checked ? 100:0;
+            let ending2_1 = document.getElementById('ending2_1').checked ? 100:0;
+            let ending3_1 = document.getElementById('ending3_1').checked ? 70:0;
+            let ending4_1 = document.getElementById('ending4_1').checked ? 40:0;
+            let ending4_2 = document.getElementById('ending4_2').checked ? 50:0;
+            let ending5_1 = document.getElementById('ending5_1').checked ? 170:0;
+            let ending5_2 = document.getElementById('ending5_2').checked ? 180:0;
+            let ending6_1 = document.getElementById('ending6_1').checked ? 200:0;
+            let ending6_2 = document.getElementById('ending6_2').checked ? 220:0;
+            let ending7_1 = document.getElementById('ending7_1').checked ? 100:0;
+            let ending7_2 = document.getElementById('ending7_2').checked ? 110:0;
+            let ending8_1_1 = document.getElementById('ending8_1_1').checked ? 100:0;
+            let ending8_1_2 = document.getElementById('ending8_1_2').checked ? 130:0;
+            let ending8_1_3 = document.getElementById('ending8_1_3').checked ? 140:0;
+            let ending8_1_4 = document.getElementById('ending8_1_4').checked ? 160:0;
+            let ending8_2_1 = document.getElementById('ending8_2_1').checked ? 200:0;
+            let ending8_2_2 = document.getElementById('ending8_2_2').checked ? 800:0;
+            let ending8_2_3 = document.getElementById('ending8_2_3').checked ? 120:0;
+            let ending9_2_1 = document.getElementById('ending9_2_1').checked ? 200:0;
+            let ending9_2_2 = document.getElementById('ending9_2_2').checked ? 220:0;
+            let ending9_2_3 = document.getElementById('ending9_2_3').checked ? 260:0;
+            let ending9_2_4 = document.getElementById('ending9_2_4').checked ? 400:0;
+
+            let score = parseInt(document.getElementById('score').value) || 0;
+
+            let totalScore = 
+                (score * team1) + 
+                (score * team2) + 
+                (sixStar * 50) + 
+                (fiveStar * 20) + 
+                (fourStar * 10) + 
+                (collection1 * 5) + 
+                (collection2 * 20) + 
+                (collection3 * 20 ) - 
+                (bank_decrease * 10) +
+                (bank_increase * 5) + 
+                (kill * 20) + 
+                (mission_sp * 40) + 
+                (mission1_1 * 75) +
+                (mission1_2 * 150) +
+                (mission2_1 * 50) + 
+                (mission2_2 * 100) + 
+                (mission3_1 * 75) + 
+                (mission3_2 * 150) +
+                (mission4_1 * 75) +
+                (mission4_2 * 150) +
+                (mission5_2 * 100) + 
+                (mission6_2 * 75) +
+                (mission7_1 * 75) +
+                (mission7_2 * 150) +
+                (mission8_1 * 80) + 
+                (mission8_2 * 160) + 
+                (mission9_2 * 100) +
+                (mission10_2 * 80)+
+                (ending145) +
+                (ending245) +
+                (ending1_1) +
+                (ending2_1) +
+                (ending3_1) +
+                (ending4_1) +
+                (ending4_2) +
+                (ending5_1) +
+                (ending5_2) +
+                (ending6_1) +
+                (ending6_2) +
+                (ending7_1) +
+                (ending7_2) +
+                (ending8_1_1) +
+                (ending8_1_2) +
+                (ending8_1_3) +
+                (ending8_1_4) +
+                (ending8_2_1) +
+                (ending8_2_2) +
+                (ending8_2_3) +
+                (ending9_2_1) +
+                (ending9_2_2) +
+                (ending9_2_3) +
+                (ending9_2_4)
+            document.getElementById('result').innerText = '得分：' + totalScore+'！';
+
+        }
+    </script>
 </body>
 </html>
