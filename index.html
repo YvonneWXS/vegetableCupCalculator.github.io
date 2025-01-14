@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肉鸽计算器 by 薯条</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .column {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .column:last-child {
+            margin-right: 0;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input[type="checkbox"],
+        .input-group input[type="number"] {
+            margin-right: 10px;
+        }
+        .category {
+            margin-top: 20px;
+        }
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .input-group {
+            display: inline-block;
+            width: 22%;
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input[type="checkbox"],
+        .input-group input[type="number"] {
+            margin-right: 10px;
+        }
+        .category {
+            margin-top: 20px;
+        }
+        .category h2 {
+            margin-bottom: 10px;
+        }
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <h1>蕉流群鲜蔬杯计算器</h1>
+        <div class="row">
+            <div class="column">
+
+                <div class="category">
+                    <h2>01 临时招募</h2>
+                    <div class="input-group">
+                        <label for="sixStar">六星干员(50'/个)：</label>
+                        <input type="number" id="sixStar" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="fiveStar">五星干员(20'/个)：</label>
+                        <input type="number" id="fiveStar" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="fourStar">四星干员(10'/个)：</label>
+                        <input type="number" id="fourStar" value="0">
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>02 藏品</h2>
+                    <label for="Collection">藏品(5'/个)：</label>
+                    <input type="number" id="Collection" value="0">
+                </div>
+                <div class="category">
+                    <h2>03 特殊击杀</h2>
+                    <label for="Collection">狗/鸭/熊/鼠 20'/个：</label>
+                    <input type="number" id="Collection" value="0">
+                </div>
+                <div class="category">
+                    <h2>04 道中关卡</h2>
+                    <div class="input-group">
+                        <label>无漏加分(40'/次)：</label>
+                        <input type="number" id="mission_sp" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>建制_普通(75'/次)：</label>
+                        <input type="number" id="mission1_1" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>建制_紧急(180'/次)：</label>
+                        <input type="number" id="mission1_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>神出鬼没_普通(50'/次)：</label>
+                        <input type="number" id="mission2_1" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>神出鬼没_紧急(100'/次)：</label>
+                        <input type="number" id="mission2_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>莱茵卫士_普通(75'/次)：</label>
+                        <input type="number" id="mission3_1" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>莱茵卫士_紧急(150'/次)：</label>
+                        <input type="number" id="mission3_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>争议频发_普通(75'/次)：</label>
+                        <input type="number" id="mission4_1" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>争议频发_紧急(150'/次)：</label>
+                        <input type="number" id="mission4_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>混沌_紧急(100'/次)：</label>
+                        <input type="number" id="mission5_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>机动队_紧急(75'/次)：</label>
+                        <input type="number" id="mission6_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>洞天福地_普通(80'/次)：</label>
+                        <input type="number" id="mission7_1" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>洞天福地_紧急(150'/次)：</l米色sion_1bel>
+                        <input type="number" id="mission7_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>外道_普通(80'/次)：</label>
+                        <input type="number" id="mission8_1" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>外道_紧急(160'/次)：</label>
+                        <input type="number" id="mission8_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>神圣渴求_紧急(100'/次)：</label>
+                        <input type="number" id="mission9_2" value="0">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>谋求共识_紧急(80'/次)：</label>
+                        <input type="number" id="mission10_2" value="0">
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>05 通关结局</h2>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending1_1"> 离歌庭院_普通(100')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending2_1">赴敌者_普通(100')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending3_1">王冠之下_普通(70')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending4_1">紧急授课_普通(40')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending4_2">紧急授课_混乱(50')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending5_1">思维矫正_普通(170')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending5_2">思维矫正_混乱(180')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending6_1">魂灵朝谒_普通(200')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending6_2">魂灵朝谒_混乱(220')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending7_1">朝谒_普通(100')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending7_2">朝谒_混乱(110')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_1_1">授法_普通(100')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_1_2">授法_混乱(130')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_1_3">授法_滚动(140')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_1_4">授法_混乱+滚动(160')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_1">生吃奎隆(200')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_2">击杀奎隆(800')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_3">储备分(120')</label>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_1">不容拒绝_普通(200')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_2">不容拒绝_混乱(220')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_3">不容拒绝_混乱+滚动(260')</label>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="ending8_2_3">不容拒绝_三级蛋(400')</label>
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>07 结算</h2>
+                    <div class="input-group">
+                        <label>结算分：</label>
+                        <input type="number" id="score" value="0">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <h2 id="result" class="result">最终得分：0！</div>
+    </div>
+</body>
+</html>
