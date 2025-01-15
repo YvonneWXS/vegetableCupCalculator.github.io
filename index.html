@@ -44,7 +44,12 @@
         }
         .input-group {
             display: inline-block;
-            width: 22%;
+            width: 90%;
+            margin-bottom: 15px;
+        }
+        .input-sp {
+            display: inline-block;
+            width: 90%;
             margin-bottom: 15px;
         }
         .input-group label {
@@ -77,15 +82,12 @@
                     <div class="input-group">
                         <label><input type="checkbox" id="N18">N18额外加300分</label>
                     </div>
-                    
                 </div>
                 <div class="category">
                     <h2>02 分队</h2>
+                    <div class="input-sp">指挥分队/集群分队/后勤分队/矛头分队/高规格分队/因地制宜分队/堡垒战术分队</div>
                     <div class="input-group">
-                        <label><input type="checkbox" id="team1"> 高规格分队(结算界面1.1倍)</label>
-                    </div>
-                    <div class="input-group">
-                        <label><input type="checkbox" id="team2">重辅(结算界面1.1倍)</label>
+                        <input type="checkbox" id="team1"> 结算界面1.1倍</label>
                     </div>
                     
                 </div>
@@ -326,7 +328,6 @@
         function calculateScore() {
             let score = parseInt(document.getElementById('score').value) || 0;
             let team1 = document.getElementById('team1').checked ? 0.1:0;
-            let team2 = document.getElementById('team2').checked ? 0.1:0;
             let N18 = document.getElementById('N18').checked ? 300:0;
             
             let sixStar = parseInt(document.getElementById('sixStar').value) || 0;
@@ -391,8 +392,7 @@
             let totalScore = 
                 score + 
                 (N18) +
-                (score * team1) + 
-                (score * team2) + 
+                (score * team1) +  
                 (sixStar * 50) + 
                 (fiveStar * 20) + 
                 (fourStar * 10) + 
