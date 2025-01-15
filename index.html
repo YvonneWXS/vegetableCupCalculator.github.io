@@ -318,8 +318,8 @@
 
         function calculateScore() {
             let score = parseInt(document.getElementById('score').value) || 0;
-            let team1 = document.getElementById('team1').checked ? 1.1:0;
-            let team2 = document.getElementById('team2').checked ? 1.1:0;
+            let team1 = document.getElementById('team1').checked ? 0.1:0;
+            let team2 = document.getElementById('team2').checked ? 0.1:0;
             
             let sixStar = parseInt(document.getElementById('sixStar').value) || 0;
             let fiveStar = parseInt(document.getElementById('fiveStar').value) || 0;
@@ -381,6 +381,7 @@
 
             // Example score calculations, replace with actual logic
             let totalScore = 
+                score + 
                 (score * team1) + 
                 (score * team2) + 
                 (sixStar * 50) + 
