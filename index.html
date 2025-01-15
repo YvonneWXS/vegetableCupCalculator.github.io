@@ -73,7 +73,14 @@
         <div class="row">
             <div class="column">
                 <div class="category">
-                    <h2>01 分队</h2>
+                    <h2>01 难度</h2>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="N18">N18额外加150分</label>
+                    </div>
+                    
+                </div>
+                <div class="category">
+                    <h2>02 分队</h2>
                     <div class="input-group">
                         <label><input type="checkbox" id="team1"> 高规格分队(结算界面1.1倍)</label>
                     </div>
@@ -83,7 +90,7 @@
                     
                 </div>
                 <div class="category">
-                    <h2>02 临时招募</h2>
+                    <h2>03 临时招募</h2>
                     <div class="input-group">
                         <label for="sixStar">六星干员(50'/个)：</label>
                         <input type="number" id="sixStar" value="0">
@@ -98,7 +105,7 @@
                     </div>
                 </div>
                 <div class="category">
-                    <h2>03 藏品</h2>
+                    <h2>04 藏品</h2>
                     <div class="input-group">
                         <label for="Collection">藏品(5'/个)：</label>
                         <input type="number" id="collection1" value="0">
@@ -113,7 +120,7 @@
                     </div>
                 </div>
                 <div class="category">
-                    <h2>04 取钱</h2>
+                    <h2>05 取钱</h2>
                     <div class="input-group">
                         <label for="Collection">超200后取钱(-10'/块)：</label>
                         <input type="number" id="bank_decrease" value="0">
@@ -125,12 +132,12 @@
 
                 </div>
                 <div class="category">
-                    <h2>05 特殊击杀</h2>
+                    <h2>06 特殊击杀</h2>
                     <label for="Collection">狗/鸭/熊/鼠 20'/个：</label>
                     <input type="number" id="kill" value="0">
                 </div>
                 <div class="category">
-                    <h2>06 道中关卡</h2>
+                    <h2>07 道中关卡</h2>
                     <div class="input-group">
                         <label>无漏加分(40'/次)：</label>
                         <input type="number" id="mission_sp" value="0">
@@ -211,7 +218,7 @@
                     </div>
                 </div>
                 <div class="category">
-                    <h2>07 路线加分</h2>
+                    <h2>08 路线加分</h2>
                     <div class="input-group">
                         <label><input type="checkbox" id="ending145"> 145结局(+100')</label>
                     </div>
@@ -221,7 +228,7 @@
                     </div>
                 </div>
                 <div class="category">
-                    <h2>08 通关结局</h2>
+                    <h2>09 Boss关</h2>
                     <div class="input-group">
                         <label><input type="checkbox" id="ending1_1"> 离歌庭院_普通(100')</label>
                     </div>
@@ -320,6 +327,7 @@
             let score = parseInt(document.getElementById('score').value) || 0;
             let team1 = document.getElementById('team1').checked ? 0.1:0;
             let team2 = document.getElementById('team2').checked ? 0.1:0;
+            let N18 = document.getElementById('N18').checked ? 300:0;
             
             let sixStar = parseInt(document.getElementById('sixStar').value) || 0;
             let fiveStar = parseInt(document.getElementById('fiveStar').value) || 0;
@@ -382,6 +390,7 @@
             // Example score calculations, replace with actual logic
             let totalScore = 
                 score + 
+                (N18) +
                 (score * team1) + 
                 (score * team2) + 
                 (sixStar * 50) + 
