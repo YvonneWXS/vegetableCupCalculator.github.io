@@ -80,7 +80,7 @@
                 <div class="category">
                     <h2>01 难度</h2>
                     <div class="input-group">
-                        <label><input type="checkbox" id="N18">N18额外加300分</label>
+                        <label><input type="checkbox" id="N18">N18额外加400分</label>
                     </div>
                 </div>
                 <div class="category">
@@ -328,7 +328,7 @@
         function calculateScore() {
             let score = parseInt(document.getElementById('score').value) || 0;
             let team1 = document.getElementById('team1').checked ? 0.1:0;
-            let N18 = document.getElementById('N18').checked ? 300:0;
+            let N18 = document.getElementById('N18').checked ? 400:0;
             
             let sixStar = parseInt(document.getElementById('sixStar').value) || 0;
             let fiveStar = parseInt(document.getElementById('fiveStar').value) || 0;
