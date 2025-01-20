@@ -44,7 +44,7 @@
         }
         .input-group {
             display: inline-block;
-            width: 90%;
+            width: 22%;
             margin-bottom: 15px;
         }
         .input-sp {
@@ -118,7 +118,7 @@
                     </div>
                     <div class="input-group">
                         <label for="Collection">3层负面藏品补偿分(20'/个)：</label>
-                        <input type="number" id="collection3" value="0">
+                        <input type="checkbox" id="collection3" value="0">
                     </div>
                 </div>
                 <div class="category">
@@ -336,7 +336,7 @@
 
             let collection1 = parseInt(document.getElementById('collection1').value) || 0;
             let collection2 = parseInt(document.getElementById('collection2').value) || 0;
-            let collection3 = parseInt(document.getElementById('collection3').value) || 0;
+            let collection3 = document.getElementById('collection3').checked ? 100:0;
 
             let bank_decrease = parseInt(document.getElementById('bank_decrease').value) || 0;
             let bank_increase = parseInt(document.getElementById('bank_increase').value) || 0;
@@ -398,7 +398,7 @@
                 (fourStar * 10) + 
                 (collection1 * 5) + 
                 (collection2 * 20) + 
-                (collection3 * 20 ) - 
+                (collection3) - 
                 (bank_decrease * 10) +
                 (bank_increase * 5) + 
                 (kill * 20) + 
